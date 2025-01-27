@@ -1,0 +1,82 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*Layout*/
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 1em;
+}
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    margin: 50px;
+    text-align: center;
+}
+
+#sw1 {
+    float: left;
+}
+
+#sw2 {
+    float: right;
+}
+
+/*--------------Smatphones--------------*/
+/*cabeçalho*/
+header h1 {
+    text-align: center;
+    padding: 25px 0px;
+}
+
+/*-----Menu-----*/
+nav {
+    width: 100%;
+}
+
+nav ul {
+    list-style: none;
+    background-color: #e15a1f;
+    display: flex;
+    justify-content: end;
+}
+
+nav ul li {
+    padding: 10px 0px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+    padding: 10px 15px;
+}
+
+nav ul li a:hover {
+    background-color: #cc470d;
+}
+
+/*----------Rodapé----------*/
+footer {
+    width: 100%;
+    margin-top: 20px;
+    background-color: #e15a1f;
+    padding: 25px 0px;
+    font-size: 0.9em;
+    text-align: center;
+    color: #fff;
+}
+
+/*--------------Tablets | Notebooks | PCS--------------*/
+@media (min-width: 576px){
+    #sw1, #sw2 {
+        float: none;
+    } 
+}
+
