@@ -12,6 +12,11 @@ let sw2 = false
 //A variável abaixo é usada para verificar se a lâmpaa está quebrada
 let broken = false
 
+//A linha abaixo cria uma variável que identifica página HTML
+let path = window.location.pathname
+alert(path)
+// alert(path) apoio ao entendimento dal´gica
+
 function sw(recive) {
     // console.log(recive) | Apoio a lógica
 
@@ -43,7 +48,8 @@ function sw(recive) {
         broken = true
     }
 
-    if (broken !== true) {
+    //Se estiver na página AND e a lampada não estiver quebarada
+    if (path === '/and.html' && broken !== true) {
         //lógica para o operador AND
         if (sw1 === true && sw2 === true) {
             document.getElementById('lamp').src = "img/on.jpg"
@@ -51,6 +57,28 @@ function sw(recive) {
             document.getElementById('lamp').src = "img/off.jpg"
         }
     }
+
+    //Se estiver na página OR e a lampada não estiver quebarada. se quebrar a lampada, nada mais acende
+    if (path === '/or.html' && broken !== true) {
+        //lógica para o operador OR
+        if (sw1 === true || sw2 === true) {//Se ligar um, liga a lamapada, não precisa ligar os dois para ligar a lampada, pq ta no OU
+            document.getElementById('lamp').src = "img/on.jpg"
+        } else {
+            document.getElementById('lamp').src = "img/off.jpg"
+        }
+    }
+
+    //Se estiver na página NOT e a lampada não estiver quebarada. se quebrar a lampada, nada mais acende
+    if (path === '/not.html' && broken !== true) {
+        //lógica para o operador NOT
+        if (!sw1) {//Se ligar um, liga a lamapada, não precisa ligar os dois para ligar a lampada, pq ta no OU
+            document.getElementById('lamp').src = "img/on.jpg"
+        } else {
+            document.getElementById('lamp').src = "img/off.jpg"
+        }
+    }
+
+
 
 
 
